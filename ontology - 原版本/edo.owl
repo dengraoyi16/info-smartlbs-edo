@@ -1,0 +1,1082 @@
+@prefix : <http://smartlab.homenet.org/ontologies/edo#> .
+@prefix p: <urn:default:baseUri:#> .
+@prefix ns1: <http://smartlab.homenet.org/ontologies/sms/0.1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@base <http://smartlab.homenet.org/ontologies/edo> .
+
+<http://smartlab.homenet.org/ontologies/edo> rdf:type owl:Ontology ;
+                                              owl:versionIRI <http://smartlab.homenet.org/ontologies/edo/0.5> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#beDeliveredTo
+:beDeliveredTo rdf:type owl:ObjectProperty ;
+               rdfs:domain :Publish ;
+               rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#belongTo
+:belongTo rdf:type owl:ObjectProperty ;
+          owl:inverseOf :own ;
+          rdfs:domain :Service ;
+          rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#canRead
+:canRead rdf:type owl:ObjectProperty ;
+         rdfs:domain :Service ;
+         rdfs:range :Publish .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#colleague
+:colleague rdf:type owl:ObjectProperty ,
+                    owl:SymmetricProperty ,
+                    owl:TransitiveProperty ;
+           rdfs:domain :Service ;
+           rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#cooperator
+:cooperator rdf:type owl:ObjectProperty ,
+                     owl:SymmetricProperty ;
+            rdfs:domain :Service ;
+            rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#destination
+:destination rdf:type owl:ObjectProperty ;
+             rdfs:domain :Subscribe ;
+             rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#event
+:event rdf:type owl:ObjectProperty ;
+       rdfs:domain :ServiceRegistration ;
+       rdfs:range :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#generate
+:generate rdf:type owl:ObjectProperty ;
+          rdfs:domain :Service ;
+          rdfs:range :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :memberOf ;
+           rdfs:domain :Organization ;
+           rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#hasSubOrganization
+:hasSubOrganization rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :subOrganizationOf ;
+                    rdf:type owl:TransitiveProperty ;
+                    rdfs:domain :Organization ;
+                    rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#memberOf
+:memberOf rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          rdfs:domain :Organization ;
+          rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#own
+:own rdf:type owl:ObjectProperty ;
+     rdfs:domain :Organization ;
+     rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#partner
+:partner rdf:type owl:ObjectProperty ;
+         owl:inverseOf :partner ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Organization ;
+         rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialDestination
+:potentialDestination rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Publish ;
+                      rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialSource
+:potentialSource rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Subscribe ;
+                 rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#reportTo
+:reportTo rdf:type owl:ObjectProperty ;
+          owl:inverseOf :reportedBy ;
+          rdf:type owl:TransitiveProperty ;
+          rdfs:domain :Organization ;
+          rdfs:range :Organization ;
+          rdfs:comment "Events from service A can be delivered to all services owned by organization's direct reported by A's owner." .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#reportedBy
+:reportedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Organization ;
+            rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#sibling
+:sibling rdf:type owl:ObjectProperty ;
+         owl:inverseOf :sibling ;
+         rdf:type owl:SymmetricProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Service ;
+         rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :Publish ;
+        rdfs:range :Service .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#subOrganizationOf
+:subOrganizationOf rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Organization ;
+                   rdfs:range :Organization .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#subscribe
+:subscribe rdf:type owl:ObjectProperty ;
+           rdfs:domain :Subscribe ;
+           rdfs:range :Publish .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#use
+:use rdf:type owl:ObjectProperty ;
+     rdfs:domain :Service ;
+     rdfs:range :Resource .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialDestinationRange
+:potentialDestinationRange rdf:type owl:DatatypeProperty ;
+                           rdfs:domain :Publish ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:oneOf [ rdf:type rdf:List ;
+                                                    rdf:first "colleague" ;
+                                                    rdf:rest [ rdf:type rdf:List ;
+                                                               rdf:first "cooperator" ;
+                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                          rdf:first "sibling" ;
+                                                                          rdf:rest rdf:nil
+                                                                        ]
+                                                             ]
+                                                  ]
+                                      ] .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialSourceRange
+:potentialSourceRange rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Subscribe ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:oneOf [ rdf:type rdf:List ;
+                                               rdf:first "colleague" ;
+                                               rdf:rest [ rdf:type rdf:List ;
+                                                          rdf:first "cooperator" ;
+                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                     rdf:first "sibling" ;
+                                                                     rdf:rest rdf:nil
+                                                                   ]
+                                                        ]
+                                             ]
+                                 ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#Event
+:Event rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#InstructEvent
+:InstructEvent rdf:type owl:Class ;
+               rdfs:subClassOf :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Organization
+:Organization rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Publish
+:Publish rdf:type owl:Class ;
+         rdfs:subClassOf :ServiceRegistration .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#ReportEvent
+:ReportEvent rdf:type owl:Class ;
+             rdfs:subClassOf :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Resource
+:Resource rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Service
+:Service rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#ServiceRegistration
+:ServiceRegistration rdf:type owl:Class ;
+                     rdfs:subClassOf :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#ServiceRequire
+:ServiceRequire rdf:type owl:Class ;
+                rdfs:subClassOf :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#ServiceResponse
+:ServiceResponse rdf:type owl:Class ;
+                 rdfs:subClassOf :Event .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Subscribe
+:Subscribe rdf:type owl:Class ;
+           rdfs:subClassOf :ServiceRegistration .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:e rdf:type swrl:Variable .
+
+:p rdf:type swrl:Variable .
+
+:s rdf:type swrl:Variable .
+
+:x rdf:type swrl:Variable .
+
+:y rdf:type swrl:Variable .
+
+:t rdf:type swrl:Variable .
+
+:q rdf:type swrl:Variable .
+
+:z rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "C1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :source ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :event ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :e
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :sibling ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :t
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :canRead ;
+                           swrl:argument1 :t ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :reportTo ;
+                           swrl:argument1 :y ;
+                           swrl:argument2 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :hasMember ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :hasSubOrganization ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :hasSubOrganization ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :reportTo ;
+                           swrl:argument1 :y ;
+                           swrl:argument2 :x
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :hasMember ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A6"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :own ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :own ;
+                                      swrl:argument1 :y ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :hasSubOrganization ;
+                                                 swrl:argument1 :x ;
+                                                 swrl:argument2 :y
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :colleague ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :hasSubOrganization ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :z
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :partner ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :y
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :partner ;
+                           swrl:argument1 :z ;
+                           swrl:argument2 :y
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A5"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :own ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :own ;
+                                      swrl:argument1 :y ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :hasSubOrganization ;
+                                                 swrl:argument1 :z ;
+                                                 swrl:argument2 :y
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :hasSubOrganization ;
+                                                            swrl:argument1 :z ;
+                                                            swrl:argument2 :x
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :colleague ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :own ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :own ;
+                                      swrl:argument1 :x ;
+                                      swrl:argument2 :s
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :t
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :sibling ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "A7"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :own ;
+                           swrl:argument1 :x ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :own ;
+                                      swrl:argument1 :y ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :partner ;
+                                                 swrl:argument1 :x ;
+                                                 swrl:argument2 :y
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :cooperator ;
+                           swrl:argument1 :s ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :source ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate :potentialDestinationRange ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 "sibling"^^xsd:string
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :sibling ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :t
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialDestination ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "C3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :ReportEvent ;
+                           swrl:argument1 :e
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :event ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :e
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :source ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 :s
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :own ;
+                                                            swrl:argument1 :x ;
+                                                            swrl:argument2 :s
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :own ;
+                                                                       swrl:argument1 :y ;
+                                                                       swrl:argument2 :t
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :reportTo ;
+                                                                                  swrl:argument1 :x ;
+                                                                                  swrl:argument2 :y
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :canRead ;
+                           swrl:argument1 :t ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "C4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :ServiceRequire ;
+                           swrl:argument1 :e
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :source ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :s
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :event ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 :e
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :colleague ;
+                                                            swrl:argument1 :s ;
+                                                            swrl:argument2 :t
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :canRead ;
+                           swrl:argument1 :t ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "C5"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :ServiceRequire ;
+                           swrl:argument1 :e
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :source ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :s
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :event ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 :e
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :cooperator ;
+                                                            swrl:argument1 :s ;
+                                                            swrl:argument2 :t
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :canRead ;
+                           swrl:argument1 :t ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "D2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :destination ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :beDeliveredTo ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :event ;
+                                                 swrl:argument1 :q ;
+                                                 swrl:argument2 :e
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :event ;
+                                                            swrl:argument1 :p ;
+                                                            swrl:argument2 :e
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :subscribe ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "D1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :destination ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :canRead ;
+                                      swrl:argument1 :t ;
+                                      swrl:argument2 :p
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :source ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 :s
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :event ;
+                                                            swrl:argument1 :q ;
+                                                            swrl:argument2 :e
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :event ;
+                                                                       swrl:argument1 :p ;
+                                                                       swrl:argument2 :e
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :potentialSource ;
+                                                                                  swrl:argument1 :q ;
+                                                                                  swrl:argument2 :s
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                             swrl:propertyPredicate :potentialDestination ;
+                                                                                             swrl:argument1 :p ;
+                                                                                             swrl:argument2 :t
+                                                                                           ] ;
+                                                                                 rdf:rest rdf:nil
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :beDeliveredTo ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B5"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :destination ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate :potentialSourceRange ;
+                                      swrl:argument1 :q ;
+                                      swrl:argument2 "colleague"^^xsd:string
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :colleague ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :t
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialSource ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :source ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :colleague ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate :potentialDestinationRange ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 "colleague"^^xsd:string
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialDestination ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B6"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :destination ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :cooperator ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate :potentialSourceRange ;
+                                                 swrl:argument1 :q ;
+                                                 swrl:argument2 "cooperator"^^xsd:string
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialSource ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :source ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :cooperator ;
+                                      swrl:argument1 :s ;
+                                      swrl:argument2 :t
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                 swrl:propertyPredicate :potentialDestinationRange ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 "cooperator"^^xsd:string
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialDestination ;
+                           swrl:argument1 :p ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "C2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate :InstructEvent ;
+                           swrl:argument1 :e
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :event ;
+                                      swrl:argument1 :p ;
+                                      swrl:argument2 :e
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :source ;
+                                                 swrl:argument1 :p ;
+                                                 swrl:argument2 :s
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate :own ;
+                                                            swrl:argument1 :x ;
+                                                            swrl:argument2 :s
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                       swrl:propertyPredicate :own ;
+                                                                       swrl:argument1 :y ;
+                                                                       swrl:argument2 :t
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate :reportedBy ;
+                                                                                  swrl:argument1 :x ;
+                                                                                  swrl:argument2 :y
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :canRead ;
+                           swrl:argument1 :t ;
+                           swrl:argument2 :p
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment ""^^xsd:string ;
+   rdfs:label "B4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :destination ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                      swrl:propertyPredicate :potentialSourceRange ;
+                                      swrl:argument1 :q ;
+                                      swrl:argument2 "sibling"^^xsd:string
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :sibling ;
+                                                 swrl:argument1 :s ;
+                                                 swrl:argument2 :t
+                                               ] ;
+                                     rdf:rest rdf:nil
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :potentialSource ;
+                           swrl:argument1 :q ;
+                           swrl:argument2 :s
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi

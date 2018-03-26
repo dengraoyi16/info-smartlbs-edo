@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://smartlab.homenet.org/ontologies/edsms/0.5" uri="edsms.owl"/>
+    <uri id="User Entered Import Resolution" name="http://smartlab.homenet.org/ontologies/letoy/0.2" uri="letoy.owl"/>
+    <uri id="User Entered Import Resolution" name="http://smartlab.homenet.org/ontologies/xexpress/0.2" uri="xexpress.owl"/>
+    <uri id="User Entered Import Resolution" name="http://smartlab.homenet.org/ontologies/edo/0.5" uri="edo.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
