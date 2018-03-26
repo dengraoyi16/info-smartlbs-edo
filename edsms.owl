@@ -1,0 +1,734 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.smart-labs.info/edo/edsms#"
+     xml:base="http://ontology.smart-labs.info/edo/edsms"
+     xmlns:edo="http://ontology.smart-labs.info/edo/edo#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://ontology.smart-labs.info/edo/edsms">
+        <owl:imports rdf:resource="http://ontology.smart-labs.info/edo/edo"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#AccountingService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#AccountingService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Administrator -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Administrator">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#AssemblingService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#AssemblingService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#OperationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#AuxilaryTool -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#AuxilaryTool">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#BOM -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#BOM">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Knowledge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#BoardDropHammer -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#BoardDropHammer">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Building -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Building">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Geographical"/>
+        <rdfs:comment>what it is after the completion of construction
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Building_Zone -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Building_Zone">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Geographical"/>
+        <rdfs:comment>what it is before the construction</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#BusinessService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#BusinessService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#CamPress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#CamPress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ComputationService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ComputationService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ControlService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ControlService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ManagementService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#DataService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#DataService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ComputationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ElectroplatingBath -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ElectroplatingBath">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventConsumer -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventConsumer">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#EventService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventMessaging -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventMessaging">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#EventService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventProcessor -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventProcessor">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#EventService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventProducer -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventProducer">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#EventService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ComputationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Facility -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Facility">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Finished_Product -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Finished_Product">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#FoldingMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#FoldingMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Geographical -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Geographical">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#GrindingMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#GrindingMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#shearing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#HandlingService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#HandlingService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#LogisticService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Handling_Operator -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Handling_Operator">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Human -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Human">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#HydrostaticPress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#HydrostaticPress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#InjectionMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#InjectionMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#founding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Knowledge -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Knowledge">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Lathe -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Lathe">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#shearing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#LocationChange -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#LocationChange">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#StatusChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#LogisticService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#LogisticService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#OperationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MachineCenter -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MachineCenter">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#shearing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MachineTool -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MachineTool">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Facility"/>
+        <rdfs:comment>machine and tool</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MaintenanceService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MaintenanceService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#OperationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ManagementService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ManagementService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ManualMoulding -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ManualMoulding">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#founding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ManufactureService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ManufactureService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#OperationService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ManufacturingOperator -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ManufacturingOperator">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MarketingService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MarketingService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Material -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Material">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MillingMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MillingMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#shearing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#MouldingMachien -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#MouldingMachien">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#founding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#OperationChange -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#OperationChange">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#StatusChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#OperationService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#OperationService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Oven -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Oven">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PaintingStation -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PaintingStation">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PerformanceMeasurementService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PerformanceMeasurementService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ManagementService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PlanService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PlanService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ManagementService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Procedure_Expert -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Procedure_Expert">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Process -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Process">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Knowledge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Programming_Operator -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Programming_Operator">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PunchingPress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PunchingPress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PurchasingService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PurchasingService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Raw_Material -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Raw_Material">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#RollingMill -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#RollingMill">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#SaleService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#SaleService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#BusinessService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ScheduleService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ScheduleService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#ManagementService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ScrewPress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ScrewPress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Semifinished_Product -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Semifinished_Product">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Material"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ShipmentService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ShipmentService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#LogisticService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ShotBlastingMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ShotBlastingMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#Site -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#Site">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#Geographical"/>
+        <rdfs:comment>coordinate</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#StatusChange -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#StatusChange">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#ReportEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#TransportService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#TransportService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#LogisticService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#TrimmingMachine -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#TrimmingMachine">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#shearing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#WarehouseService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#WarehouseService">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#LogisticService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#WedgePress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#WedgePress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#forming -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#forming">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#MachineTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#founding -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#founding">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#MachineTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#heat_treatment_or_surface_treatment">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#MachineTool"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#knuckelPress -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#knuckelPress">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#forming"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#shearing -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#shearing">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edsms#MachineTool"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ChannelCfg -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#ChannelCfg">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#CfgInstructEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#DeregistrationReport -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#DeregistrationReport">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#CfgReport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#DeregistrationRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#DeregistrationRequire">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#DeregistrationResponse -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#DeregistrationResponse">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceResponse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#RegistrationReport -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#RegistrationReport">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#CfgReport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#RegistrationRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#RegistrationRequire">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#RegistrationResponse -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#RegistrationResponse">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceResponse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eDispatchTask -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eDispatchTask">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#InstructEvent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#OperationChange"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#LocationChange"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,493 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.smart-labs.info/edo/letoy#"
+     xml:base="http://ontology.smart-labs.info/edo/letoy"
+     xmlns:edsms="http://ontology.smart-labs.info/edo/edsms#"
+     xmlns:letoysc="http://ontology.smart-labs.info/edo/letoysc#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:edo="http://ontology.smart-labs.info/edo/edo#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xexpress="http://ontology.smart-labs.info/edo/xexpress#">
+    <owl:Ontology rdf:about="http://ontology.smart-labs.info/edo/letoy">
+        <owl:imports rdf:resource="http://ontology.smart-labs.info/edo/edsms"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#beDeliveredTo -->
+
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#beDeliveredTo">
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#belongTo -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#belongTo"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#destination -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#destination"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#event -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#event"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#generate -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#generate"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#memberOf"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#partner -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#partner"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#source -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#source"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#subOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#subOrganizationOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialDestinationRange -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialDestinationRange"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialSourceRange -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialSourceRange"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Organization -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Publish -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Publish"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Subscribe -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#EventProducer -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#EventProducer"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ManufactureService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ManufactureService"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#PerformanceMeasurementService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#PerformanceMeasurementService"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ScheduleService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ScheduleService"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#ShipmentService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#ShipmentService"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#TransportService -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edsms#TransportService"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eDispatchTask -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eDispatchTask"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#LeFactory -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#LeFactory">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <edo:subOrganizationOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeToy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#LeToy -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#LeToy">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <edo:memberOf rdf:resource="http://ontology.smart-labs.info/edo/letoysc#LeToySupplyChain"/>
+        <edo:partner rdf:resource="http://ontology.smart-labs.info/edo/xexpress#XExpress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#LeWare -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#LeWare">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy"/>
+        <edo:subOrganizationOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeToy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeFactory -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeFactory">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <edo:serviceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeFactory"/>
+        <edo:subServiceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <edo:serviceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeToy"/>
+        <edo:subServiceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoysc#ServiceManagerOfLeToySupplyChain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeWare -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeWare">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <edo:serviceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeWare"/>
+        <edo:subServiceManagerOf rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#lePM -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#lePM">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#PerformanceMeasurementService"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeToy"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeToy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#lePMSubscribe -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#lePMSubscribe">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <edo:destination rdf:resource="http://ontology.smart-labs.info/edo/letoy#lePM"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange"/>
+        <edo:potentialSourceRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</edo:potentialSourceRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#rfidReader -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#rfidReader">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#EventProducer"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeFactory"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeFactory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#rfidReaderPublish -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#rfidReaderPublish">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange"/>
+        <edo:source rdf:resource="http://ontology.smart-labs.info/edo/letoy#rfidReader"/>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</edo:potentialDestinationRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#scheduler -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#scheduler">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#ScheduleService"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeFactory"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeFactory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#schedulerPublish -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#schedulerPublish">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eDispatchTask"/>
+        <edo:source rdf:resource="http://ontology.smart-labs.info/edo/letoy#scheduler"/>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</edo:potentialDestinationRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#shipment -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#shipment">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#ShipmentService"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeWare"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeWare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wareTrans -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wareTrans">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#TransportService"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeWare"/>
+        <edo:generate rdf:resource="http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeWare"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wareTransPublish -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wareTransPublish">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eExternalTransRequire"/>
+        <edo:source rdf:resource="http://ontology.smart-labs.info/edo/letoy#wareTrans"/>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperator</edo:potentialDestinationRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wareTransSubscribe -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wareTransSubscribe">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <edo:destination rdf:resource="http://ontology.smart-labs.info/edo/letoy#wareTrans"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire"/>
+        <edo:potentialSourceRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</edo:potentialSourceRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wipManager -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManager">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edsms#ManufactureService"/>
+        <edo:belongTo rdf:resource="http://ontology.smart-labs.info/edo/letoy#LeFactory"/>
+        <edo:generate rdf:resource="http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire"/>
+        <edo:managedBy rdf:resource="http://ontology.smart-labs.info/edo/letoy#ServiceManagerOfLeFactory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wipManagerPublishOrderStatus -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManagerPublishOrderStatus">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eOrderStatusChange"/>
+        <edo:source rdf:resource="http://ontology.smart-labs.info/edo/letoy#wipManager"/>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</edo:potentialDestinationRange>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperator</edo:potentialDestinationRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wipManagerPublishTransRequire -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManagerPublishTransRequire">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eInternalTransRequire"/>
+        <edo:source rdf:resource="http://ontology.smart-labs.info/edo/letoy#wipManager"/>
+        <edo:potentialDestinationRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</edo:potentialDestinationRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wipManagerSubscribeLocation -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManagerSubscribeLocation">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <edo:destination rdf:resource="http://ontology.smart-labs.info/edo/letoy#wipManager"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eWIPLocationChange"/>
+        <edo:potentialSourceRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</edo:potentialSourceRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoy#wipManagerSubscribeTask -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManagerSubscribeTask">
+        <rdf:type rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <edo:destination rdf:resource="http://ontology.smart-labs.info/edo/letoy#wipManager"/>
+        <edo:event rdf:resource="http://ontology.smart-labs.info/edo/edsms#eDispatchTask"/>
+        <edo:potentialSourceRange rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</edo:potentialSourceRange>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoysc#LeToySupplyChain -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoysc#LeToySupplyChain"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/letoysc#ServiceManagerOfLeToySupplyChain -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/letoysc#ServiceManagerOfLeToySupplyChain"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/xexpress#XExpress -->
+
+    <owl:NamedIndividual rdf:about="http://ontology.smart-labs.info/edo/xexpress#XExpress"/>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#lePM"/>
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#rfidReader"/>
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#scheduler"/>
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#shipment"/>
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#wareTrans"/>
+            <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/letoy#wipManager"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

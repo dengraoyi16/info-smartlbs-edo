@@ -1,0 +1,2192 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ontology.smart-labs.info/edo/edo#"
+     xml:base="http://ontology.smart-labs.info/edo/edo"
+     xmlns:p="urn:default:baseUri:#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://ontology.smart-labs.info/edo/edo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#beDeliveredTo -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#beDeliveredTo">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#belongTo -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#belongTo">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#canRead -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#canRead">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#colleague -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#colleague">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#cooperator -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#cooperator">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#destination -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#destination">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#directManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#directManagedBy">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#event -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#event">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRegistration"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#generate -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#generate">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#hasMember">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#memberOf"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#hasServiceManager -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#hasServiceManager">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#serviceManagerOf"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#hasSubOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#hasSubOrganization">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#subOrganizationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#hasSubServiceManager -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#hasSubServiceManager">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#subServiceManagerOf"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#includeIndividual -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#includeIndividual">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#includedBy"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Project"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#includedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#includedBy">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#managedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#managedBy">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#memberOf">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#own -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#own">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#partner -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#partner">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#partner"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialDestination -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialDestination">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialSource -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialSource">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#receiveFrom -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#receiveFrom">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#reportTo -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#reportTo">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#reportedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:comment>Events from service A can be delivered to all services owned by organization&apos;s direct reported by A&apos;s owner.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#reportedBy -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#reportedBy">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#serviceManagerOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#serviceManagerOf">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#sibling -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#sibling">
+        <owl:inverseOf rdf:resource="http://ontology.smart-labs.info/edo/edo#sibling"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#source -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#source">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#subOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#subOrganizationOf">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#subServiceManagerOf -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#subServiceManagerOf">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceManager"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#use -->
+
+    <owl:ObjectProperty rdf:about="http://ontology.smart-labs.info/edo/edo#use">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+        <rdfs:range rdf:resource="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#brokerAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#brokerAddress">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#mavenAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#mavenAddress">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#owlFilePath -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#owlFilePath">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialDestinationRange -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialDestinationRange">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Publish"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>colleague</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>cooperator</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>sibling</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#potentialSourceRange -->
+
+    <owl:DatatypeProperty rdf:about="http://ontology.smart-labs.info/edo/edo#potentialSourceRange">
+        <rdfs:domain rdf:resource="http://ontology.smart-labs.info/edo/edo#Subscribe"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>colleague</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>cooperator</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>sibling</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#CfgInstructEvent -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#CfgInstructEvent">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#InstructEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#CfgReport -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#CfgReport">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#ReportEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Event -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Event"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#InstructEvent -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#InstructEvent">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Organization -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Organization"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Project -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Project"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Publish -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Publish">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRegistration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#ReportEvent -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#ReportEvent">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Resource -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Resource"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Service -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Service"/>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#ServiceManager -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#ServiceManager">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#ServiceRegistration -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#ServiceRegistration">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#ServiceRequire -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#ServiceRequire">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#ServiceResponse -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#ServiceResponse">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontology.smart-labs.info/edo/edo#Subscribe -->
+
+    <owl:Class rdf:about="http://ontology.smart-labs.info/edo/edo#Subscribe">
+        <rdfs:subClassOf rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRegistration"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#e">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#q">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#o">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#sm">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#o1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#o2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#sm1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#sm2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://ontology.smart-labs.info/edo/edo#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#destination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSourceRange"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#sibling"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSource"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#sibling"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasMember"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o1"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#o2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasServiceManager"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o1"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasServiceManager"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o2"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubServiceManager"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm1"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasMember"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#reportTo"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#memberOf"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o1"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#o2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasServiceManager"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o2"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#directManagedBy"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o1"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#managedBy"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o1"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasMember"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#reportTo"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#colleague"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#partner"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#partner"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#z"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#z"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasSubOrganization"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#z"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#colleague"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#managedBy"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#subServiceManagerOf"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm1"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#managedBy"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#sibling"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A7</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#partner"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#cooperator"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#sibling"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestinationRange"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sibling</swrl:argument2>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#ReportEvent"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#reportTo"/>
+                                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C4</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#colleague"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#ServiceRequire"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#cooperator"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#beDeliveredTo"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#destination"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#receiveFrom"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#belongTo"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#o"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#hasServiceManager"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#o"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#directManagedBy"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#managedBy"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#sm"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#destination"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestination"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSource"/>
+                                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#beDeliveredTo"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B5</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#destination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSourceRange"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#colleague"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSource"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestinationRange"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">colleague</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#colleague"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C2</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#event"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#own"/>
+                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                                <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#reportedBy"/>
+                                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#x"/>
+                                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#y"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#InstructEvent"/>
+                                                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#e"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#canRead"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B6</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#destination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSourceRange"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperator</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#cooperator"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialSource"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#q"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B3</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#source"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestinationRange"/>
+                                <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cooperator</swrl:argument2>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#cooperator"/>
+                                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#s"/>
+                                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://ontology.smart-labs.info/edo/edo#potentialDestination"/>
+                        <swrl:argument1 rdf:resource="http://ontology.smart-labs.info/edo/edo#p"/>
+                        <swrl:argument2 rdf:resource="http://ontology.smart-labs.info/edo/edo#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
