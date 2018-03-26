@@ -1,0 +1,281 @@
+@prefix : <http://smartlab.homenet.org/ontologies/letoy#> .
+@prefix edo: <http://smartlab.homenet.org/ontologies/edo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix edsms: <http://smartlab.homenet.org/ontologies/edsms#> .
+@prefix letoysc: <http://smartlab.homenet.org/ontologies/letoysc#> .
+@prefix xexpress: <http://smartlab.homenet.org/ontologies/xexpress#> .
+@base <http://smartlab.homenet.org/ontologies/letoy> .
+
+<http://smartlab.homenet.org/ontologies/letoy> rdf:type owl:Ontology ;
+                                                owl:versionIRI <http://smartlab.homenet.org/ontologies/letoy/0.2> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#belongTo
+edo:belongTo rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#destination
+edo:destination rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#event
+edo:event rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#generate
+edo:generate rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#memberOf
+edo:memberOf rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#partner
+edo:partner rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#source
+edo:source rdf:type owl:ObjectProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#subOrganizationOf
+edo:subOrganizationOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialDestinationRange
+edo:potentialDestinationRange rdf:type owl:DatatypeProperty .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#potentialSourceRange
+edo:potentialSourceRange rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edo#Organization
+edo:Organization rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Publish
+edo:Publish rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edo#Subscribe
+edo:Subscribe rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#EventProducer
+edsms:EventProducer rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#ManufactureService
+edsms:ManufactureService rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#PerformanceMeasurementService
+edsms:PerformanceMeasurementService rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#ScheduleService
+edsms:ScheduleService rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#ShipmentService
+edsms:ShipmentService rdf:type owl:Class .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#TransportService
+edsms:TransportService rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://smartlab.homenet.org/ontologies/edsms#eDispatchTask
+edsms:eDispatchTask rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#eExternalTransRequire
+edsms:eExternalTransRequire rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#eInternalTransRequire
+edsms:eInternalTransRequire rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#eOrderStatusChange
+edsms:eOrderStatusChange rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/edsms#eWIPLocationChange
+edsms:eWIPLocationChange rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#LeFactory
+:LeFactory rdf:type owl:NamedIndividual ,
+                    edo:Organization ;
+           edo:subOrganizationOf :LeToy .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#LeToy
+:LeToy rdf:type owl:NamedIndividual ,
+                edo:Organization ;
+       edo:memberOf letoysc:LeToySupplyChain ;
+       edo:partner xexpress:XExpress .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#LeWare
+:LeWare rdf:type owl:NamedIndividual ,
+                 edo:Organization ;
+        edo:subOrganizationOf :LeToy .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#lePM
+:lePM rdf:type owl:NamedIndividual ,
+               edsms:PerformanceMeasurementService ;
+      edo:belongTo :LeToy .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#lePMSubscribe
+:lePMSubscribe rdf:type owl:NamedIndividual ,
+                        edo:Subscribe ;
+               edo:destination :lePM ;
+               edo:event edsms:eOrderStatusChange ;
+               edo:potentialSourceRange "colleague"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#rfidReader
+:rfidReader rdf:type owl:NamedIndividual ,
+                     edsms:EventProducer ;
+            edo:belongTo :LeFactory .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#rfidReaderPublish
+:rfidReaderPublish rdf:type owl:NamedIndividual ,
+                            edo:Publish ;
+                   edo:event edsms:eWIPLocationChange ;
+                   edo:source :rfidReader ;
+                   edo:potentialDestinationRange "sibling"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#scheduler
+:scheduler rdf:type owl:NamedIndividual ,
+                    edsms:ScheduleService ;
+           edo:belongTo :LeFactory .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#schedulerPublish
+:schedulerPublish rdf:type owl:NamedIndividual ,
+                           edo:Publish ;
+                  edo:event edsms:eDispatchTask ;
+                  edo:source :scheduler ;
+                  edo:potentialDestinationRange "sibling"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#shipment
+:shipment rdf:type owl:NamedIndividual ,
+                   edsms:ShipmentService ;
+          edo:belongTo :LeWare .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wareTrans
+:wareTrans rdf:type owl:NamedIndividual ,
+                    edsms:TransportService ;
+           edo:belongTo :LeWare ;
+           edo:generate edsms:eExternalTransRequire .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wareTransPublish
+:wareTransPublish rdf:type owl:NamedIndividual ,
+                           edo:Publish ;
+                  edo:event edsms:eExternalTransRequire ;
+                  edo:source :wareTrans ;
+                  edo:potentialDestinationRange "cooperator"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wareTransSubscribe
+:wareTransSubscribe rdf:type owl:NamedIndividual ,
+                             edo:Subscribe ;
+                    edo:destination :wareTrans ;
+                    edo:event edsms:eInternalTransRequire ;
+                    edo:potentialSourceRange "colleague"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wipManager
+:wipManager rdf:type owl:NamedIndividual ,
+                     edsms:ManufactureService ;
+            edo:belongTo :LeFactory ;
+            edo:generate edsms:eInternalTransRequire .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wipManagerPublishOrderStatus
+:wipManagerPublishOrderStatus rdf:type owl:NamedIndividual ,
+                                       edo:Publish ;
+                              edo:event edsms:eOrderStatusChange ;
+                              edo:source :wipManager ;
+                              edo:potentialDestinationRange "colleague"^^xsd:string ,
+                                                            "cooperator"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wipManagerPublishTransRequire
+:wipManagerPublishTransRequire rdf:type owl:NamedIndividual ,
+                                        edo:Publish ;
+                               edo:event edsms:eInternalTransRequire ;
+                               edo:source :wipManager ;
+                               edo:potentialDestinationRange "colleague"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wipManagerSubscribeLocation
+:wipManagerSubscribeLocation rdf:type owl:NamedIndividual ,
+                                      edo:Subscribe ;
+                             edo:destination :wipManager ;
+                             edo:event edsms:eWIPLocationChange ;
+                             edo:potentialSourceRange "sibling"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoy#wipManagerSubscribeTask
+:wipManagerSubscribeTask rdf:type owl:NamedIndividual ,
+                                  edo:Subscribe ;
+                         edo:destination :wipManager ;
+                         edo:event edsms:eDispatchTask ;
+                         edo:potentialSourceRange "sibling"^^xsd:string .
+
+
+###  http://smartlab.homenet.org/ontologies/letoysc#LeToySupplyChain
+letoysc:LeToySupplyChain rdf:type owl:NamedIndividual .
+
+
+###  http://smartlab.homenet.org/ontologies/xexpress#XExpress
+xexpress:XExpress rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :lePM
+                        :rfidReader
+                        :scheduler
+                        :shipment
+                        :wareTrans
+                        :wipManager
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
